@@ -72,6 +72,53 @@ public class Job {
         this.positionType=positionType;
         this.coreCompetency=coreCompetency;
     }
+    @Override
+    public String toString(){
+        String coreCompetnecy1="";
+        if(this.getCoreCompetency()==(null)){
+        coreCompetnecy1="Data not available";
+            System.out.println("If Conditions***********");
+        }
+        else{ System.out.println("Else Conditions***********");
+            coreCompetnecy1=this.getCoreCompetency().toString();
+        }
+        String name="";
+        if(this.getName()==(null)){
+            name="Data not available";
+            System.out.println("If Conditions***********");
+        }
+        else{
+            name=this.getName().toString();
+        }
+
+        String employer="";
+        if(this.getEmployer()==(null)){
+            employer="Data not available";
+            System.out.println("If Conditions***********");        }
+        else {
+            employer=this.getEmployer().toString();
+
+        }
+        String location="";
+        if(this.getLocation()==(null)){
+         location="Data not available";
+        }
+        else{
+            location=this.getLocation().toString();
+        }
+        String position="";
+        if(this.getPositionType()==(null)){
+            position="Data not available";
+        }
+        else{
+            position=this.getPositionType().toString();
+        }
+
+
+        return System.lineSeparator()+"Id: "+this.getId()+System.lineSeparator()+"Name: "+name+System.lineSeparator()+"Employer: "+employer
+                +System.lineSeparator()+"Location: "+location+System.lineSeparator()+"Position Type: "+
+                position+System.lineSeparator()+"Core Competency: "+coreCompetnecy1+System.lineSeparator();
+    }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
