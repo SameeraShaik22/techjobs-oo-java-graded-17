@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.Objects;
+
 public abstract class JobField {
 
     private int id;
@@ -10,6 +12,9 @@ public  JobField(String value){
     id = nextId;
     nextId++;
     this.value=value;
+    if(value==null|| value.equals("")){
+        setValue("Data not available");
+    }
 }
     @Override
     public String toString() {
@@ -24,5 +29,10 @@ public  JobField(String value){
     }
     public int getId() {
         return id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

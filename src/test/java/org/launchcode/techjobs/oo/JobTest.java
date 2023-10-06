@@ -69,8 +69,8 @@ public class JobTest {
     }
     @Test
     public void testToStringHandlesEmptyField(){
-        Job job1=new Job(null, null, null,
-                null, null);
+        Job job1=new Job("", new Employer(""), new Location(""),
+                new PositionType(""), new CoreCompetency(""));
         Map<String, String> myMap = new HashMap<>();
         System.out.println(job1+"***************");
         String[] pairs = job1.toString().split(System.lineSeparator());
@@ -81,6 +81,7 @@ public class JobTest {
             String[] keyValue = pair.split(":");
             myMap.put(keyValue[0], String.valueOf(keyValue[1]));
         }
+        System.out.println(myMap+"*************");
         assertEquals("Data not available",myMap.get("Core Competency").trim());
         assertEquals("Data not available",myMap.get("Name").trim());
         assertEquals("Data not available",myMap.get("Employer").trim());
