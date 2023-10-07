@@ -12,13 +12,16 @@ public  JobField(String value){
     id = nextId;
     nextId++;
     this.value=value;
-    if(value==null|| value.equals("")){
-        setValue("Data not available");
-    }
+
 }
     @Override
     public String toString() {
-        return value;
+
+        if(value==null|| value.equals("")){
+            setValue("Data not available");
+        }
+    return value;
+
     }
     public String getValue() {
         return value;

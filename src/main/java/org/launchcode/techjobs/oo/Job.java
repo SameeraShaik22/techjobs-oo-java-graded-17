@@ -71,14 +71,14 @@ public class Job {
         this.location=location;
         this.positionType=positionType;
         this.coreCompetency=coreCompetency;
-        if(name==null|| name.equals("")){
-            setName("Data not available");
-        }
+
         }
 
     @Override
     public String toString(){
-
+        if(name==null|| name.equals("")){
+            setName("Data not available");
+        }
         return System.lineSeparator()+"ID: "+this.getId()+System.lineSeparator()+"Name: "+getName()+System.lineSeparator()+"Employer: "+getEmployer()
                 +System.lineSeparator()+"Location: "+getLocation()+System.lineSeparator()+"Position Type: "+
                 getPositionType()+System.lineSeparator()+"Core Competency: "+getCoreCompetency()+System.lineSeparator();
